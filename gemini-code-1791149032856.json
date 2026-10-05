@@ -1,0 +1,50 @@
+{
+  "name": "init-community-game-framework",
+  "description": "Scaffolds an empty GitHub repository with a dual-licensing structure and an automated Contributor License Agreement (CLA) workflow.",
+  "context": {
+    "project_type": "Community-driven game",
+    "code_license": "PolyForm Noncommercial 1.0",
+    "asset_license": "CC BY-NC 4.0 (Creative Commons Attribution-NonCommercial 4.0 International)",
+    "cla_strategy": "Automated via cla-assistant/github-action",
+    "goal": "Allow community contributions while legally preventing commercialization of the code and assets."
+  },
+  "tasks": [
+    {
+      "step": 1,
+      "action": "Create License Files",
+      "requirements": [
+        "Create a file named 'LICENSE-CODE' and populate it with the full text of the PolyForm Noncommercial 1.0 license.",
+        "Create a file named 'LICENSE-ASSETS' and populate it with the full text of the CC BY-NC 4.0 license.",
+        "Create a root 'LICENSE' file that explicitly explains this dual-license structure and points to the two specific files."
+      ]
+    },
+    {
+      "step": 2,
+      "action": "Create Contribution Guidelines",
+      "requirements": [
+        "Create 'CONTRIBUTING.md'.",
+        "Add a section explaining how the community can contribute code vs. assets.",
+        "Add a mandatory section explaining that all contributors must sign the CLA, which will be automatically checked on their Pull Request."
+      ]
+    },
+    {
+      "step": 3,
+      "action": "Configure GitHub Actions for CLA",
+      "requirements": [
+        "Create the directory structure '.github/workflows/'.",
+        "Create a file named 'cla.yml' inside the workflows directory.",
+        "Populate 'cla.yml' using the standard 'cla-assistant/github-action' workflow template. Configure it to trigger on 'issue_comment' and 'pull_request_target'.",
+        "Include placeholder environment variables for 'GITHUB_TOKEN' and 'PERSONAL_ACCESS_TOKEN'."
+      ]
+    },
+    {
+      "step": 4,
+      "action": "Create README.md",
+      "requirements": [
+        "Generate a professional 'README.md' for a game project.",
+        "Include a 'Licensing' section that clearly explains the dual-license model (Code is source-available/non-commercial, Assets are CC BY-NC 4.0) so players and developers understand the boundaries.",
+        "Include a 'How to Contribute' section linking to CONTRIBUTING.md."
+      ]
+    }
+  ]
+}
